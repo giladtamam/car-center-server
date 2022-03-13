@@ -1,3 +1,5 @@
+import { Manufacturer } from "src/manufacturer/manufacturer.entity";
+
 export enum CarOwnerType {
     PRIVATE = 'private',
     LEASING = 'leasing',
@@ -7,4 +9,8 @@ export enum CarOwnerType {
 export enum EngineType {
     DIESEL = 'diesel',
     GASOLINE = 'gasoline'
+}
+
+export class SearchOptions {
+    manufacturers: Manufacturer[]
 }

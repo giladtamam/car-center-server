@@ -1,4 +1,6 @@
 export class GetAdsDto {
-    fromYear: string;
-    toYear: string;
+    fromYear?: number;
+    toYear?: number;
+    fromHand?: number;
+    toHand?: number;
 }

@@ -1,6 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Exclude } from 'class-transformer';
+import { User } from 'src/auth/user.entity';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { CarOwnerType, EngineType } from './ads.models';
-
 @Entity()
 export class Ad {
     @PrimaryGeneratedColumn('uuid')
@@ -48,6 +49,10 @@ export class Ad {
     @Column({ name: 'car_owner', nullable: true })
     car_owner: CarOwnerType;
 
-    // @Column()
-    // description: string;
+    @Column({ name: 'images_urls', nullable: true, type: 'text', array: true })
+    images_urls: string[];
+
+    @ManyToOne(_type => User, user => user.ads, { eager: false })
+    @Exclude({ toPlainOnly: true })
+    user: User
 }

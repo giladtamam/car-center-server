@@ -1,7 +1,5 @@
 import { IsNotEmpty, IsEnum } from 'class-validator';
 import { CarOwnerType, EngineType } from '../ads.models';
-
-
 export class CreateAdDto {
     title?: string;
     areaId?: number;
